@@ -30,7 +30,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y musl-tools
 
       - name: Release
-        uses: iamd3vil/rlsr@v0.8.0
+        uses: iamd3vil/rlsr@v0.8.2
         with:
           config: rlsr.yml
           publish: true
