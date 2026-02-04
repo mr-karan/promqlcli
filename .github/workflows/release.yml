@@ -29,11 +29,13 @@ jobs:
       - name: Install musl-tools
         run: sudo apt-get update && sudo apt-get install -y musl-tools
 
+      - name: Install rlsr
+        run: |
+          curl -sL https://github.com/iamd3vil/rlsr/releases/download/v0.8.2/rlsr-v0.8.2-linux-amd64.tar.gz | tar xz
+          chmod +x rlsr
+          sudo mv rlsr /usr/local/bin/
+
       - name: Release
-        uses: iamd3vil/rlsr@v0.8.2
-        with:
-          config: rlsr.yml
-          publish: true
-          rm_dist: true
+        run: rlsr --config rlsr.yml --rm-dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
