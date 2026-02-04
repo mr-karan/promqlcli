@@ -1,4 +1,4 @@
-set shell := ["zsh", "-lc"]
+set shell := ["bash", "-lc"]
 
 # Default target
 _default:
