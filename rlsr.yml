@@ -1,0 +1,24 @@
+releases:
+  - name: "Release to github"
+    dist_folder: "./dist"
+    targets:
+      github:
+        owner: "mr-karan"
+        repo: "promqlcli"
+    checksum:
+      algorithm: "sha256"
+    additional_files:
+      - "README.md"
+    builds:
+      - command: "just build-linux"
+        artifact: "target/x86_64-unknown-linux-musl/release/prometheus-metrics"
+        bin_name: "prometheus-metrics"
+        archive_name: "promqlcli-{{ meta.tag }}-linux-amd64"
+        name: "Linux amd64 build"
+      - command: "just build-macos"
+        artifact: "target/aarch64-apple-darwin/release/prometheus-metrics"
+        bin_name: "prometheus-metrics"
+        archive_name: "promqlcli-{{ meta.tag }}-darwin-arm64"
+        name: "macOS arm64 build"
+changelog:
+  format: "github"
