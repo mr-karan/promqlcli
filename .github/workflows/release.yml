@@ -31,10 +31,11 @@ jobs:
 
       - name: Install rlsr
         run: |
+          mkdir -p /tmp/rlsr
           curl -sLO https://github.com/iamd3vil/rlsr/releases/download/v0.8.2/rlsr-v0.8.2-linux-x86_64.zip
-          unzip rlsr-v0.8.2-linux-x86_64.zip
-          chmod +x rlsr
-          sudo mv rlsr /usr/local/bin/
+          unzip -o rlsr-v0.8.2-linux-x86_64.zip -d /tmp/rlsr
+          chmod +x /tmp/rlsr/rlsr
+          sudo mv /tmp/rlsr/rlsr /usr/local/bin/
 
       - name: Release
         run: rlsr --config rlsr.yml --rm-dist
