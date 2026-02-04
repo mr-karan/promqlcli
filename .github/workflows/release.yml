@@ -31,7 +31,8 @@ jobs:
 
       - name: Install rlsr
         run: |
-          curl -sL https://github.com/iamd3vil/rlsr/releases/download/v0.8.2/rlsr-v0.8.2-linux-amd64.tar.gz | tar xz
+          curl -sLO https://github.com/iamd3vil/rlsr/releases/download/v0.8.2/rlsr-v0.8.2-linux-x86_64.zip
+          unzip rlsr-v0.8.2-linux-x86_64.zip
           chmod +x rlsr
           sudo mv rlsr /usr/local/bin/
 
