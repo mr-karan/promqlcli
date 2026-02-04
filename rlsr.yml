@@ -11,13 +11,13 @@ releases:
       - "README.md"
     builds:
       - command: "just build-linux"
-        artifact: "target/x86_64-unknown-linux-musl/release/prometheus-metrics"
-        bin_name: "prometheus-metrics"
+        artifact: "target/x86_64-unknown-linux-musl/release/promqlcli"
+        bin_name: "promqlcli"
         archive_name: "promqlcli-{{ meta.tag }}-linux-amd64"
         name: "Linux amd64 build"
       - command: "just build-macos"
-        artifact: "target/aarch64-apple-darwin/release/prometheus-metrics"
-        bin_name: "prometheus-metrics"
+        artifact: "target/aarch64-apple-darwin/release/promqlcli"
+        bin_name: "promqlcli"
         archive_name: "promqlcli-{{ meta.tag }}-darwin-arm64"
         name: "macOS arm64 build"
 changelog:
